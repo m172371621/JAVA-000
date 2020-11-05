@@ -17,9 +17,8 @@ public class NettyServerApplication {
 
         List<String> proxyServers = new ArrayList<>();
         proxyServers.add(HTTP_LOCALHOST + "8801");
-        proxyServers.add(HTTP_LOCALHOST + "8801");
-        proxyServers.add(HTTP_LOCALHOST + "8801");
-        proxyServers.add(HTTP_LOCALHOST + "8801");
+        proxyServers.add(HTTP_LOCALHOST + "8802");
+        proxyServers.add(HTTP_LOCALHOST + "8803");
 
         String proxyServer = System.getProperty("proxyServer", "http://localhost:8088");
         String proxyPort = System.getProperty("proxyPort", "8888");

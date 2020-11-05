@@ -24,11 +24,12 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
     
     public HttpInboundHandler(List<String> proxyServer) {
         this.proxyServer = proxyServer;
-        handler = new HttpOutboundHandler(router.route(proxyServer));
         // filter
         // router
         filter = new HttpRequestFilterImpl();
         router = new RandomHttpEndpointRouter();
+
+        handler = new HttpOutboundHandler(router.route(proxyServer));
     }
     
     @Override
