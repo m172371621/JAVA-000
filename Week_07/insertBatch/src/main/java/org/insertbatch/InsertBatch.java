@@ -5,7 +5,6 @@ import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Timestamp;
-import java.util.Date;
 
 /**
  * 批量插入订单表
@@ -31,8 +30,8 @@ public class InsertBatch {
      */
     private static void insertBatch(int count) {
         String sql = "INSERT INTO t_order(good_id, user_id, order_price, order_address, order_time, pay_way, pay_time, order_status) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-        Connection connection;
-        PreparedStatement preparedStatement;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
         try {
             connection = ConnectionUtils.getConnection();
 
@@ -59,10 +58,10 @@ public class InsertBatch {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try{
+            try {
                 preparedStatement.clearBatch();
                 connection.close();
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
