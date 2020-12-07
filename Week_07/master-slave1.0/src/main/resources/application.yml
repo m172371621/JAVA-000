@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://192.168.2.128:3307/test
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    slave:
+      jdbc-url: jdbc:mysql://192.168.2.128:3308/test
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mabatis:
+  mapper-locations: mapper/**.mapper.xml
