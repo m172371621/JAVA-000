@@ -3,7 +3,7 @@ package org.example.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.example.entity.OrderEntity;
 
-@Mapper
+//@Mapper
 public interface OrderMapper {
 
     int insert(OrderEntity orderEntity);
